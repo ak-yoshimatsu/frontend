@@ -1,25 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import axios from "axios";
 import './App.css';
 
-function App() {
+const App = () => {
+  const list = async () => {
+    const res = await axios.get('http://localhost:3003/user')
+    console.log(res.data);
+  }
+  const post = async () => {
+    const data = {
+      "id": "4",
+      "name": "SHIRO",
+      "email": "SHIRO@mail.com"
+    }
+    const res = await axios.post('http://localhost:3003/user', data)
+    console.log(res.data);
+  }
+  const get = async () => {
+    const res = await axios.get('http://localhost:3003/user/1')
+    console.log(res.data);
+  }
+  const put = async () => {
+    const data = {
+      "id": "4",
+      "name": "SHIRO",
+      "email": "SHIRO@mail.com"
+    }
+    const res = await axios.put('http://localhost:3003/user/4', data)
+    console.log(res.data);
+  }
+  const remove = async () => {
+    const res = await axios.delete('http://localhost:3003/user/4')
+    console.log(res.data);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>React</h1>
+      <button type="button" onClick={list}>list</button>
+      <button type="button" onClick={get}>get</button>
+      <button type="button" onClick={post}>post</button>
+      <button type="button" onClick={put}>put</button>
+      <button type="button" onClick={remove}>delete</button>
+    </>
   );
 }
 

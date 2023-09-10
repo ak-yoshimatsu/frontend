@@ -1,0 +1,31 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "name": "TARO",
+      "email": "TARO@mail.com"
+    },
+    {
+      "id": "2",
+      "name": "JIRO",
+      "email": "JIRO@mail.com"
+    },
+    {
+      "id": "3",
+      "name": "SUBRO",
+      "email": "SUBRO@mail.com"
+    },
+    {
+      "id": "4",
+      "name": "SHIRO",
+      "email": "SHIRO@mail.com"
+    }
+  ],
+  "post": [
+    {
+      "id": "1",
+      "title": "title01",
+      "content": "content01"
+    }
+  ]
+}
